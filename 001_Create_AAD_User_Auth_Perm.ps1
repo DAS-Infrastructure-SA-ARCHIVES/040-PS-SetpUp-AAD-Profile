@@ -238,7 +238,7 @@ function Check-User{
     [string]$UserToIdentify)
 
 
-    if(Get-AzureADUser -SearchString $UserToIdentify) {
+    if(Get-AzureADUser -ObjectId $UserToIdentify) {
         return $true
     }
     else{
