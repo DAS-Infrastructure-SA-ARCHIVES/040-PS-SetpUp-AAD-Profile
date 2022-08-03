@@ -786,7 +786,7 @@ if($ValPhoneNumberM365IT -ne "")
     # WE SET THE PHONE NUMBER
     try
     {
-        Set-CsUser -identity $UserPrincipalName -EnterpriseVoiceEnabled $true -HostedVoicemail $true -OnPremlineURI "tel:+$ValPhoneNumberM365IT" -ErrorAction Stop
+        Set-CsPhoneNumberAssignment -Identity $UserPrincipalName -PhoneNumber "+$ValPhoneNumberM365IT" -PhoneNumberType DirectRouting -ErrorAction Stop
         Grant-CsOnlineVoiceRoutingPolicy -Identity $UserPrincipalName -PolicyName "Peoplefone" -ErrorAction Stop
 
         # ----------------------------------------------------------
